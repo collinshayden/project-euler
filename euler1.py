@@ -10,4 +10,4 @@ def multiples():
     print(total)
 
 multiples()
-
+#output is 233168
