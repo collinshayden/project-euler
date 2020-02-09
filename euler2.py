@@ -12,6 +12,6 @@ def fibonacci():
         if(f[i] % 2==0 and f[i] < 4000000):
             total += f[i]
     print(total)
-
-
+    
 fibonacci()
+#output is 4613732
