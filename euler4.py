@@ -24,3 +24,4 @@ def palindrome():
       print(palinedomeArray[0])
       
 palindrome()
+#prints array of all palindromes, largest is 906609
