@@ -26,3 +26,4 @@ def SumSquareDifference(lim):
   print(diff)
 
 SumSquareDifference(100)
+#output is 25164150
