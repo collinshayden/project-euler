@@ -24,9 +24,10 @@ def primes(max=10):
     current += 2
 
 
-for prime in primes(100):
+for prime in primes(10001):
   print(prime)
 
 stop = timeit.default_timer()
 
 print('Time:',stop-start)
+#output is 104743
