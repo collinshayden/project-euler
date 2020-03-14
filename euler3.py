@@ -18,3 +18,5 @@ print(f(600851475143))
 
 stop = timeit.default_timer()
 print('Time:', stop - start)
+
+#output is 6857
