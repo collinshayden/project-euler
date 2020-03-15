@@ -34,3 +34,5 @@ digitCount(1000)
 
 stop = timeit.default_timer()
 print('Time:',stop-start)
+
+#output is index 4782
