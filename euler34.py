@@ -37,7 +37,6 @@ def totalsum():
 
 print(totalsum())
 
-
-
 stop = timeit.default_timer()
 print('Time:',stop-start)
+#output is 40730, time 0.5249714 seconds
