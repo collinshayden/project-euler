@@ -3,44 +3,31 @@
 # This is the longest sum of consecutive primes that adds to a prime below one-hundred.
 # The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
 # Which prime, below one-million, can be written as the sum of the most consecutive primes?
-from math import floor,ceil
 import timeit
 start = timeit.default_timer()
 
-def primegenerator():
-    primeArr = [2]
-    x = 3
-    while primeArr[-1] < 1000000:
-        if isprime(x):
-            primeArr.append(x)
-        x += 2
-    return primeArr
+def sieve(stop):
+    primes = [True for i in range(stop + 1)]
+    for i in range(2, stop + 1):
+        if primes[i] == True:
+            for j in range(i**2, stop + 1, i):
+                primes[j] = False
+    result = []
+    for i in range(len(primes)):
+        if primes[i]: result.append(i)
+    return result[2:], primes
 
-def isprime(n):
-    if n == 2:
-        return True
-    stop = int(ceil(n**0.5)) + 1
-    for dividers in range(2,stop, 1):
-        if n % dividers == 0:
-            return False
-    return True
+def solver(lim):
+    primes, prime_checker = sieve(lim)
+    consecutive_prime_sums = []
+    for gap in range(21, 90):
+        for i in range(0, len(primes)):
+            val = sum(primes[i:i+gap])
+            if val > lim: break
+            if prime_checker[val]: consecutive_prime_sums.append(val)
+    return consecutive_prime_sums[-1]
 
-def consecutiveprime():
-    primeArr = primegenerator()
-    x = 0
-    consecutiveArr = []
-    for i in range(len(primeArr)):
-        x += primeArr[i]
-        if x > 1000000:
-            break
-        if isprime(x):
-            consecutiveArr.append(x)
-    consecutiveArr.remove(2), consecutiveArr.remove(5)
-
-    return consecutiveArr
-
-
-print(consecutiveprime())
+print(solver(1000000))
 
 stop = timeit.default_timer()
 print('Time:',stop-start)
