@@ -42,3 +42,7 @@ for i in range(1, 1000000):
 print(answer)
 stop = timeit.default_timer()
 print('Time:',stop-start)
+
+#returns 402
+#Time: 58.35 seconds (pretty bad)
+#collaborated with c252
