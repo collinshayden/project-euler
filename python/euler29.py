@@ -28,3 +28,6 @@ dinstinctpowers()
 
 stop = timeit.default_timer()
 print('Time: ', stop-start)
+
+#output is 9183
+#time 0.9 seconds
