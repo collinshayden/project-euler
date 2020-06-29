@@ -11,6 +11,7 @@ using namespace std;
 int triplet()
 {
   int powA, powB, powC, abc;
+  //having b start at a and c start at b is a significant optimization, making the program ~11 seconds faster
   for (int a = 1; a < 500; a++){
     for (int b = a; b < 500; b++){
       for (int c = b; c < 500; c++){
