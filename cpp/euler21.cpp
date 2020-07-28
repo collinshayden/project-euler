@@ -8,12 +8,11 @@ using namespace std;
 
 int factors(int n)
 {
-  int sum = 0; int step;
-  if (n % 2==0) {//twice as efficient for even numbers
+  int sum = 0; int step = 1;
+  if (n % 2!=0) {//twice as efficient for odd numbers
     step = 2; sum = 1;//sum = 1 because 1 is otherwise skipped for even numbers
-  } else step = 1;//if odd, step has to be 1
-
-  for (int i = step; i < (n/2) + 1; i++){//for normal factors, upper bound is n/2
+  } 
+  for (int i = step; i < (n/2) + 1; i+=step){//for normal factors, upper bound is n/2
     if (n % i==0){
       sum += i;
     }
